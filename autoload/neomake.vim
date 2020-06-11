@@ -1101,6 +1101,7 @@ function! s:Make(options) abort
     let options = extend(copy(a:options), {
                 \ 'file_mode': 1,
                 \ 'ft': &filetype,
+                \ 'event': get(a:options, 'event', 'manual'),
                 \ }, 'keep')
     let options.make_id = make_id  " Deprecated.
     let file_mode = options.file_mode

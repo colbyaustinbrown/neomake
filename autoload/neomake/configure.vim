@@ -213,6 +213,7 @@ function! s:neomake_do_automake(context) abort
     call s:debug_log(printf('enabled makers: %s', join(map(copy(a:context.maker_jobs), 'v:val.maker.name'), ', ')))
     let make_options = {
                 \ 'file_mode': 1,
+                \ 'event': event,
                 \ 'jobs': deepcopy(a:context.maker_jobs),
                 \ 'ft': ft,
                 \ 'automake': 1}
